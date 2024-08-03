@@ -17,27 +17,26 @@ engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[1].id)
 
-# Replace with the provided OpenWeatherMap API key
-OPENWEATHERMAP_API_KEY = 'your_openweathermap_api_key'
+# OpenWeatherMap API key
+OPENWEATHERMAP_API_KEY = '3e3848eb89b69836f7cc94073ec744a4'
 
-# Replace with the provided weather forecast URL
+# weather forecast URL
 WEATHER_FORECAST_URL = 'https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={de61ffac5b63b61b533e6bb7a696f158}'
 
-# Replace with your email and password for sending emails
-EMAIL_ADDRESS = 'your_email@gmail.com'
-EMAIL_PASSWORD = 'your_email_password'
+# email and password for sending emails
+EMAIL_ADDRESS = 'gunjanbhartia2003@gmail.com'
+EMAIL_PASSWORD = 'password'
 
-# Initialize a dictionary to store reminders
+# Initializing dictionary to store reminders
 reminders = {}
 
-# Add website URLs
+# website URLs
 WEBSITE_URLS = {
     'youtube': 'https://www.youtube.com',
     'flipkart': 'https://www.flipkart.com',
-    'nalcoindia': 'https://www.nalcoindia.com',
 }
 
-# Define user profiles (you can expand this with more profiles)
+# Defining user profiles
 USER_PROFILES = {
     'user1': {
         'email': 'user1@gmail.com',
@@ -49,7 +48,7 @@ USER_PROFILES = {
     },
 }
 
-# Add more natural language understanding capabilities and commands
+#natural language understanding capabilities and commands
 NLU_COMMANDS = {
     'greet': ['hello', 'hi', 'hey'],
     'goodbye': ['goodbye', 'bye', 'see you'],
@@ -81,7 +80,7 @@ async def recognize_user_profile():
     except sr.UnknownValueError:
         return None
 
-# Add more commands based on natural language understanding
+# commands based on natural language understanding
 async def handle_nlu_command(command, user_profile):
     if command in NLU_COMMANDS['greet']:
         await talk(f'Hello, {USER_PROFILES[user_profile]["name"]}!')
